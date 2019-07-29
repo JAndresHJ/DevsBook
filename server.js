@@ -5,6 +5,10 @@ const app = express();
 //CONNECT DB
 connectDB();
 
+//Init Middleware.
+//Body parer: Extract the entire body portion of an incoming request stream and exposes it on
+app.use(express.json({ extended: false }));
+
 app.get("/", (req, res) => res.send("API Running"));
 
 // DEFINE ROUTES
